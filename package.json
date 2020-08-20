@@ -1,0 +1,48 @@
+{
+  "name": "fastify-es6",
+  "version": "0.0.1",
+  "description": "use es6 to write fastity",
+  "main": "index.js",
+  "author": "ant066",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "fastify": "^3.2.1"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-typescript": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "nodemon": "^2.0.4",
+    "pm2": "^4.4.1",
+    "webpack-node-externals": "^2.5.1"
+  },
+  "nodemonConfig": {
+    "exec": "yarn build && yarn start",
+    "watch": [
+      "src/*",
+      "assets/*"
+    ],
+    "ext": "js, json, ts",
+    "ignore": [
+      "**/__tests__/**",
+      "*.test.js",
+      "*.spec.js"
+    ]
+  },
+  "scripts": {
+    "build:dev": "rimraf dist && webpack --mode=development",
+    "build": "webpack --mode=production",
+    "dev": "nodemon",
+    "start": "node dist",
+    "pm2": "pm2 start dist",
+    "stop": "pm2 stop dist"
+  }
+}
