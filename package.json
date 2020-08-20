@@ -10,9 +10,6 @@
     "fastify": "^3.2.1"
   },
   "devDependencies": {
-    "rimraf": "^3.0.2",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12",
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.1",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
@@ -22,7 +19,11 @@
     "babel-loader": "^8.1.0",
     "nodemon": "^2.0.4",
     "pm2": "^4.4.1",
-    "webpack-node-externals": "^2.5.1"
+    "rimraf": "^3.0.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-node-externals": "^2.5.1",
+    "yarn": "^1.22.4"
   },
   "nodemonConfig": {
     "exec": "yarn build && yarn start",
